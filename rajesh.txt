@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Rajesh's Personal Blog</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fffaf7;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #70c1b3, #b2dbbf);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .intro {
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto 0 auto;
+      background-color: #fefefe;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .intro img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #70c1b3;
+    }
+
+    .intro-text {
+      flex: 1;
+    }
+
+    .blog-form {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #f0fdfd;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .blog-form input, .blog-form textarea, .blog-form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .blog-form button {
+      background-color: #70c1b3;
+      color: white;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    .blog-form button:hover {
+      background-color: #57b2a0;
+    }
+
+    .blog-posts {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .post {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .post h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
+      background-color: #f9f9f9;
+    }
+
+    @media (max-width: 600px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro img {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dr. Rajesh's Personal Blog</h1>
+    <p>Thoughts, wellness tips & stories from my journey in medicine</p>
+  </header>
+
+  <section class="intro">
+    <img src="doctor.jpg" alt="Dr. Rajesh">
+    <div class="intro-text">
+      <h2>Hello there 👋</h2>
+      <p>I'm Dr. Rajesh Rokaya, a passionate internal medicine doctor who loves blending science with human connection. This space is where I reflect, share wellness insights, and sometimes just talk about life. Thanks for stopping by!</p>
+    </div>
+  </section>
+
+  <section class="blog-form">
+    <h2>Add a New Blog Post</h2>
+    <input type="text" id="title" placeholder="Blog Title" />
+    <textarea id="content" rows="5" placeholder="Write something inspiring or insightful..."></textarea>
+    <button onclick="addBlog()">Post Blog</button>
+  </section>
+
+  <section class="blog-posts" id="blogPosts">
+    <h2>My Blog Posts</h2>
+  </section>
+
+  <footer>
+    © 2025 Dr. Rajesh Rokaya. All rights reserved.
+  </footer>
+
+  <script>
+    const blogPostsContainer = document.getElementById('blogPosts');
+
+    function loadBlogs() {
+      const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+      blogPostsContainer.innerHTML = '<h2>My Blog Posts</h2>';
+      blogs.forEach(blog => {
+        const post = document.createElement('div');
+        post.className = 'post';
+        post.innerHTML = `<h3>${blog.title}</h3><p>${blog.content}</p>`;
+        blogPostsContainer.appendChild(post);
+      });
+    }
+
+    function addBlog() {
+      const title = document.getElementById('title').value.trim();
+      const content = document.getElementById('content').value.trim();
+      if (!title || !content) {
+        alert('Please fill in both the title and content.');
+        return;
+      }
+
+      const newPost = { title, content };
+      const existingBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
+      existingBlogs.push(newPost);
+      localStorage.setItem('blogs', JSON.stringify(existingBlogs));
+      loadBlogs();
+
+      document.getElementById('title').value = '';
+      document.getElementById('content').value = '';
+    }
+
+    window.onload = loadBlogs;
+  </script>
+
+</body>
+</html>
