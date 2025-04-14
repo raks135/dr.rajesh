@@ -77,12 +77,21 @@
 
     <section id="contact">
       <h2>📬 Contact Me</h2>
-      <form name="contact" netlify>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
+      <form name="contact" method="POST" netlify>
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
       </form>
+      
     </section>
 
     <section class="center">
