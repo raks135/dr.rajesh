@@ -160,3 +160,45 @@ footer {
   object-fit: cover;
 }
 
+.navbar {
+  background-color: #f8f9fa;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #0077cc;
+}
+.back-home {
+  color: #0056b3;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.25em 0;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.back-home:hover {
+  color: #003f7f;
+  text-decoration: underline;
+}
