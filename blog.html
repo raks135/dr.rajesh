@@ -4,7 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog – Dr. Rajesh Rokaya</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .back-home {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+
+    .blog-posts {
+      display: grid;
+      gap: 2rem;
+    }
+
+    article {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+    }
+
+    article h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #004a77;
+    }
+
+    article p {
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    article a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: 600;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -14,6 +93,11 @@
   <main>
     <h1>📝 Blog</h1>
     <div class="blog-posts">
+      <article>
+        <h3>From Khalasi to Clinician: My Journey to Internal Medicine</h3>
+        <p>Coming back to Mahendranagar as a doctor was emotional...</p>
+        <a href="blog-from-khalasi-to-doctor.html">Read more →</a>
+      </article>
       <article>
         <h3>Serving My Hometown as a Doctor</h3>
         <p>Coming back to Mahendranagar as a doctor was emotional...</p>
