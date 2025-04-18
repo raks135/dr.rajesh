@@ -231,3 +231,6 @@ footer {
 #scrollTopBtn:hover {
   background-color: #222;
 }
+footer a {
+  margin-right: 20px;
+}
